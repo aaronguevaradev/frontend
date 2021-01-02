@@ -1,17 +1,11 @@
 import React, { FunctionComponent } from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import clsx from "clsx";
-import IconButton from "@material-ui/core/IconButton";
 import Input from "@material-ui/core/Input";
-import FilledInput from "@material-ui/core/FilledInput";
-import OutlinedInput from "@material-ui/core/OutlinedInput";
 import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import TextField from "@material-ui/core/TextField";
-import Visibility from "@material-ui/icons/Visibility";
-import VisibilityOff from "@material-ui/icons/VisibilityOff";
 
 interface IProps {
   userLoggedIn: boolean;
@@ -80,6 +74,7 @@ const LoanApplication: FunctionComponent<IProps> = (props) => {
         </FormControl>
         <FormControl fullWidth={true} className={classes.margin}>
           <TextField
+            onChange = {() => {return 0}}
             id="standard-number"
             label="Auto Make"
             value={values.autoMake}
