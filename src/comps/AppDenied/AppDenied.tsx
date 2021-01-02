@@ -1,11 +1,5 @@
 import React, { FunctionComponent } from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import clsx from "clsx";
-import Input from "@material-ui/core/Input";
-import InputLabel from "@material-ui/core/InputLabel";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import FormControl from "@material-ui/core/FormControl";
-import TextField from "@material-ui/core/TextField";
 
 interface IProps {
   Approved: boolean;
@@ -54,3 +48,5 @@ const AppDenied: FunctionComponent<IProps> = (props) => {
         </div>
     )
 }
+
+export default AppDenied;
