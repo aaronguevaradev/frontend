@@ -6,10 +6,8 @@ import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import FormControl from "@material-ui/core/FormControl";
 import TextField from "@material-ui/core/TextField";
+import { RouteComponentProps } from "@reach/router";
 
-interface IProps {
-  userLoggedIn: boolean;
-}
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -29,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-interface State {
+interface IState {
   purchasePrice: string;
   autoMake: string;
   autoModel: string;
@@ -37,11 +35,10 @@ interface State {
   creditScore: string;
 }
 
-const LoanApplication: FunctionComponent<IProps> = (props) => {
-  const { userLoggedIn } = props;
+const LoanApplication: FunctionComponent<RouteComponentProps > = (props) => {
 
   const classes = useStyles();
-  const [values, setValues] = React.useState<State>({
+  const [values, setValues] = React.useState<IState>({
     purchasePrice: "",
     autoMake: "",
     autoModel: "",
@@ -49,7 +46,7 @@ const LoanApplication: FunctionComponent<IProps> = (props) => {
     creditScore: "",
   });
 
-  const handleChange = (prop: keyof State) => (
+  const handleChange = (prop: keyof IState) => (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setValues({ ...values, [prop]: event.target.value });
@@ -79,7 +76,7 @@ const LoanApplication: FunctionComponent<IProps> = (props) => {
         </FormControl>
         <FormControl fullWidth={true} className={classes.margin}>
           <TextField
-            onChange = {() => {return 0}}
+            onChange = {() =>0}
             id="standard-number"
             label="Auto Make"
             value={values.autoMake}

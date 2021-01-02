@@ -1,9 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { RouteComponentProps } from "@reach/router";
 
-interface IProps {
-  Approved: boolean;
-}
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-interface State {
+interface IState {
   purchasePrice: string;
   autoMake: string;
   autoModel: string;
@@ -31,8 +29,7 @@ interface State {
   creditScore: string;
 }
 
-const AppDenied: FunctionComponent<IProps> = (props) => {
-    const { Approved } = props;
+const AppDenied: FunctionComponent<RouteComponentProps> = (props) => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
