@@ -5,11 +5,14 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import LoanApplication from "./comps/LoanApplication";
 import AppDenied from "./comps/AppDenied";
 import NewAccountPage from "./comps/NewAccountPage";
+import NavBar from "./NavBar"
+import Footer from "./Footer"
 import { Router, Link } from "@reach/router";
 
 function App() {
   return (
     <React.Fragment>
+      <NavBar/>
       <CssBaseline />
       <Container maxWidth="sm">
         <Router>
@@ -18,7 +21,8 @@ function App() {
           <NewAccountPage path="/newaccount" />
         </Router>
       </Container>
-    </React.Fragment>
+      <Footer/>
+      </React.Fragment>
   );
 }
 
