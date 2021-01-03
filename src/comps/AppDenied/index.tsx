@@ -1,2 +1,2 @@
 import AppDenied from "./AppDenied";
-export default AppDenied; 
+export default AppDenied;

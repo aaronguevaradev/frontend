@@ -3,8 +3,9 @@ import "./App.css";
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import LoanApplication from "./comps/LoanApplication";
-import AppDenied from "./comps/AppDenied"
-import { Router, Link } from "@reach/router"
+import AppDenied from "./comps/AppDenied";
+import NewAccountPage from "./comps/NewAccountPage";
+import { Router, Link } from "@reach/router";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <CssBaseline />
       <Container maxWidth="sm">
         <Router>
-        <LoanApplication path="/"/>
-        <AppDenied path="/appdenied"/>
+          <LoanApplication path="/" />
+          <AppDenied path="/appdenied" />
+          <NewAccountPage path="/newaccount" />
         </Router>
       </Container>
     </React.Fragment>

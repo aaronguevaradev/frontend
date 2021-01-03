@@ -6,8 +6,8 @@ import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import FormControl from "@material-ui/core/FormControl";
 import TextField from "@material-ui/core/TextField";
+import Button from '@material-ui/core/Button';
 import { RouteComponentProps } from "@reach/router";
-
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -28,18 +28,17 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface IState {
-  purchasePrice: string;
+  purchasePrice: number;
   autoMake: string;
   autoModel: string;
   income: string;
   creditScore: string;
 }
 
-const LoanApplication: FunctionComponent<RouteComponentProps > = (props) => {
-
+const LoanApplication: FunctionComponent<RouteComponentProps> = (props) => {
   const classes = useStyles();
   const [values, setValues] = React.useState<IState>({
-    purchasePrice: "",
+    purchasePrice: 0,
     autoMake: "",
     autoModel: "",
     income: "",
@@ -59,7 +58,18 @@ const LoanApplication: FunctionComponent<RouteComponentProps > = (props) => {
       </div>
       <div>
         <label>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio euismod lacinia at quis. Orci ac auctor augue mauris augue neque gravida. In iaculis nunc sed augue lacus viverra vitae. Viverra accumsan in nisl nisi scelerisque eu. Velit scelerisque in dictum non. Semper quis lectus nulla at volutpat. Nisi lacus sed viverra tellus. Placerat vestibulum lectus mauris ultrices eros in cursus turpis massa. Facilisis gravida neque convallis a cras semper auctor neque. Et malesuada fames ac turpis. Gravida cum sociis natoque penatibus et magnis dis parturient montes. Sit amet nisl suscipit adipiscing bibendum est ultricies integer. Sapien eget mi proin sed libero enim sed. Placerat orci nulla pellentesque dignissim enim. Eget felis eget nunc lobortis mattis aliquam faucibus purus. Ullamcorper malesuada proin libero nunc consequat interdum varius sit. Tristique sollicitudin nibh sit amet commodo nulla facilisi nullam. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio
+          euismod lacinia at quis. Orci ac auctor augue mauris augue neque
+          gravida. In iaculis nunc sed augue lacus viverra vitae. Viverra
+          accumsan in nisl nisi scelerisque eu. Velit scelerisque in dictum non.
+          Semper quis lectus nulla at volutpat. Nisi lacus sed viverra tellus.
+          Placerat vestibulum lectus mauris ultrices eros in cursus turpis
+          massa. Facilisis gravida neque convallis a cras semper auctor neque.
+          Et malesuada fames ac turpis. Gravida cum sociis natoque penatibus et
+          magnis dis parturient montes. Sit amet nisl suscipit adipiscing
+          bibendum est ultricies integer. Sapien eget mi proin sed libero enim
+          sed. 
         </label>
       </div>
       <div>
@@ -72,11 +82,12 @@ const LoanApplication: FunctionComponent<RouteComponentProps > = (props) => {
             value={values.purchasePrice}
             onChange={handleChange("purchasePrice")}
             startAdornment={<InputAdornment position="start">$</InputAdornment>}
+            type="number"
           />
         </FormControl>
         <FormControl fullWidth={true} className={classes.margin}>
           <TextField
-            onChange = {() =>0}
+            onChange={() => 0}
             id="standard-number"
             label="Auto Make"
             value={values.autoMake}
@@ -119,6 +130,11 @@ const LoanApplication: FunctionComponent<RouteComponentProps > = (props) => {
               shrink: true,
             }}
           />
+        </FormControl>
+        <FormControl fullWidth={true} className={classes.margin}>
+        <Button variant="contained" color="primary" disableElevation>
+            Submit Loan Application
+        </Button>
         </FormControl>
       </div>
     </div>
